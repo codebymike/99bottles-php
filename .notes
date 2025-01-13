@@ -1,2 +1,8 @@
 #local phpunit
 ./vendor/bin/phpunit test
+
+Notes
+learning to code travels from understandibility to changability -> more abstractions + complexity
+every changability imprveoment (DRY, composition, DI) has a complexity cost
+suggest - only use abstractions when they insist on being created
+<more concrete -----x sweet spot------ more abstract>
