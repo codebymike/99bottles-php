@@ -34,7 +34,6 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
   }
 
   public function test_verse_1() {
-    $this->markTestSkipped('delete when ready to make test pass');
     $expected =
       "1 bottle of beer on the wall, " .
       "1 bottle of beer.\n" .
