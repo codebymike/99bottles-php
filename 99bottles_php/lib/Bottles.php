@@ -4,9 +4,12 @@ class Bottles
 {
     public function verse( $number )
     {
-        return "99 bottles of beer on the wall, " .
-            "99 bottles of beer.\n" .
+        $number = (string) $number;
+        $minusOne = (string) ($number - 1);
+
+        return "{$number} bottles of beer on the wall, " .
+            "{$number} bottles of beer.\n" .
             "Take one down and pass it around, " .
-            "98 bottles of beer on the wall.\n";
+            "{$minusOne} bottles of beer on the wall.\n";
     }
 }
