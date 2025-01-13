@@ -2,7 +2,7 @@
 
 class Bottles
 {
-    function verse()
+    public function verse( $number )
     {
         return "99 bottles of beer on the wall, " .
             "99 bottles of beer.\n" .

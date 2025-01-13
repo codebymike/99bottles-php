@@ -1,0 +1,2 @@
+#local phpunit
+./vendor/bin/phpunit test
