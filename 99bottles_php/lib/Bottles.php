@@ -2,16 +2,32 @@
 
 class Bottles
 {
-    public function verse( $number )
-    {
-        $number = (string) $number;
-        $minusOne = (string) ($number - 1);
-
-        $lastContainer = $minusOne == 1 ? 'bottle' : 'bottles';
-
-        return "{$number} bottles of beer on the wall, " .
-            "{$number} bottles of beer.\n" .
-            "Take one down and pass it around, " .
-            "{$minusOne} {$lastContainer} of beer on the wall.\n";
+    public function verse( int $number ): string {
+        switch ($number) {
+            case 0:
+                return
+                    "No more bottles of beer on the wall, " .
+                    "no more bottles of beer.\n" .
+                    "Go to the store and buy some more, " .
+                    "99 bottles of beer on the wall.\n";
+            case 1:
+                return
+                    "1 bottle of beer on the wall, " .
+                    "1 bottle of beer.\n" .
+                    "Take it down and pass it around, " .
+                    "no more bottles of beer on the wall.\n";
+            case 2:
+                return
+                    "2 bottles of beer on the wall, " .
+                    "2 bottles of beer.\n" .
+                    "Take one down and pass it around, " .
+                    "1 bottle of beer on the wall.\n";
+            default:
+                return
+                    $number ." bottles of beer on the wall, " .
+                    $number . " bottles of beer.\n" .
+                    "Take one down and pass it around, " .
+                    ($number - 1) . " bottles of beer on the wall.\n";
+        }
     }
 }
