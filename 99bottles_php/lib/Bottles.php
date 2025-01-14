@@ -2,6 +2,26 @@
 
 class Bottles
 {
+    private $start = 99;
+    private $finish = 0;
+
+    public function song() : string {
+        return $this->verses( $this->start, $this->finish );
+    }
+
+    public function verses( int $start, int $finish ) : string {
+        return 
+            implode( 
+                "\n",
+                array_map( 
+                    function( $number ) {
+                        return $this->verse( $number );
+                    },
+                    range( $start, $finish ) 
+                )
+            );
+    }
+
     public function verse( int $number ): string {
         switch ($number) {
             case 0:
@@ -29,22 +49,5 @@ class Bottles
                     "Take one down and pass it around, " .
                     ($number - 1) . " bottles of beer on the wall.\n";
         }
-    }
-
-    public function verses( int $start, int $finish ) : string {
-        return 
-            implode( 
-                "\n",
-                array_map( 
-                    function( $number ) {
-                        return $this->verse( $number );
-                    },
-                    range( $start, $finish ) 
-                )
-            );
-    }
-
-    public function song() : string {
-        return $this->verses( 99, 0 );
     }
 }
