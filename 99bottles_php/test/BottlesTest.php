@@ -54,7 +54,6 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
   }
 
   public function test_a_couple_verses() {
-    $this->markTestSkipped('delete when ready to make test pass');
     $expected =
       "99 bottles of beer on the wall, " .
       "99 bottles of beer.\n" .

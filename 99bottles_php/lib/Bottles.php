@@ -30,4 +30,17 @@ class Bottles
                     ($number - 1) . " bottles of beer on the wall.\n";
         }
     }
+
+    public function verses( int $start, int $finish ) : string {
+        return 
+            implode( 
+                "\n",
+                array_map( 
+                    function( $number ) {
+                        return $this->verse( $number );
+                    },
+                    range( $start, $finish ) 
+                )
+            );
+    }
 }
