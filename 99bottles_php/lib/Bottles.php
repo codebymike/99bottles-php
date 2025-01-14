@@ -43,4 +43,8 @@ class Bottles
                 )
             );
     }
+
+    public function song() : string {
+        return $this->verses( 99, 0 );
+    }
 }
