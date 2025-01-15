@@ -9,3 +9,7 @@ suggest - only use abstractions when they insist on being created
 1) how hard to write? 2) how hard to read? 3) how hard to change?
 if you are capable of writing a smart and complex solution, it is imcumbent to accept the harder task of writing simpler code
 DRYing out code is not free. It adds a level of indirection, and layers of indirection make things harder to understand
+tests
+    as tests get more specific, code should become more generic.
+    'shameless green' = optimising for understandibility not changability
+    don't dry before completing the test suite, you might uncover the wrong abstraction (a bit of early duplication is fine)
