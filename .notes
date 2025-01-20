@@ -19,3 +19,9 @@ tests
 [L]iskov substituion - subclasses should be substitutable with their superclasses
 [I]nterface-segregation - objects shouldnb't be forced to depend on methods they don't need
 [D]ependecy-inversion - depend on abstractions not on concretrion
+Open-closed:
+    if not open (easy to implement required change) - remove the easiest to fix, or best understood CODE SMELL
+"Flocking Rules"
+    1. Select the things that are most alike.
+    2. Find the smallest difference between them.
+    3. Make the simplest change that will remove that difference.
