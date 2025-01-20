@@ -13,3 +13,9 @@ tests
     as tests get more specific, code should become more generic.
     'shameless green' = optimising for understandibility not changability
     don't dry before completing the test suite, you might uncover the wrong abstraction (a bit of early duplication is fine)
+'conditionals breed'
+[S]ingle responsibility - methods in a class should be cohesive around a single purpose
+[O]pen-closed - objects should be open for extension, but closed for modification
+[L]iskov substituion - subclasses should be substitutable with their superclasses
+[I]nterface-segregation - objects shouldnb't be forced to depend on methods they don't need
+[D]ependecy-inversion - depend on abstractions not on concretrion
