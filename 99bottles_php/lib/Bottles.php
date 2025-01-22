@@ -23,6 +23,10 @@ class Bottles
             );
     }
 
+    public function quantity( int $number ) : string {
+        return $number == 0 ? "no more" : (string) $number;
+    }
+
     public function container( int $number ) : string {
         return $number == 1 ? "bottle" : "bottles";
     }
@@ -39,18 +43,12 @@ class Bottles
                     "no more bottles of beer.\n" .
                     "Go to the store and buy some more, " .
                     "99 bottles of beer on the wall.\n";
-            case 1:
-                return
-                    $number ." ". $this->container( $number ) ." of beer on the wall, " .
-                    $number ." ". $this->container( $number ) ." of beer.\n" .
-                    "Take ". $this->pronoun( $number ) ." down and pass it around, " .
-                    "no more bottles of beer on the wall.\n";
             default:
                 return
                     $number ." ". $this->container( $number ) ." of beer on the wall, " .
                     $number ." ". $this->container( $number ) ." of beer.\n" .
                     "Take ". $this->pronoun( $number ) ." down and pass it around, " .
-                    ($number - 1) . " ". $this->container( $number - 1 ) ." of beer on the wall.\n";
+                    $this->quantity( $number - 1 ) ." ". $this->container( $number - 1 ) ." of beer on the wall.\n";
         }
     }
 }
