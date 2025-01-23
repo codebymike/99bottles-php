@@ -20,6 +20,7 @@ tests
     Liskov, in straightforward language, requires that objects be what they promise they are.
     you must be able to freely substitute an instance of a subclass for an instance
     of its superclass. Subclasses, by definition, are all that their superclasses are, plus more
+    Liskov prohibits you from doing anything that would force the sender of a message to test the returned result in order to know how to behave
 [I]nterface-segregation - objects shouldnb't be forced to depend on methods they don't need
 [D]ependecy-inversion - depend on abstractions not on concretrion
 Open-closed:
