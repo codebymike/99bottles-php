@@ -17,6 +17,9 @@ tests
 [S]ingle responsibility - methods in a class should be cohesive around a single purpose
 [O]pen-closed - objects should be open for extension, but closed for modification
 [L]iskov substituion - subclasses should be substitutable with their superclasses
+    Liskov, in straightforward language, requires that objects be what they promise they are.
+    you must be able to freely substitute an instance of a subclass for an instance
+    of its superclass. Subclasses, by definition, are all that their superclasses are, plus more
 [I]nterface-segregation - objects shouldnb't be forced to depend on methods they don't need
 [D]ependecy-inversion - depend on abstractions not on concretrion
 Open-closed:

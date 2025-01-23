@@ -1,6 +1,8 @@
 <?php
 #./vendor/bin/phpunit test
 
+declare(strict_types = 1);
+
 class Bottles
 {
     private $start = 99;
