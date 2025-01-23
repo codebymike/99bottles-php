@@ -46,19 +46,10 @@ class Bottles
     }
 
     public function verse( int $number ): string {
-        switch ($number) {
-            case 0:
-                return
-                    ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
-                    $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
-                    $this->action($number) . ", " .
-                    $this->quantity( $this->next( $number ) ) ." ". $this->container( $number - 1 ) ." of beer on the wall.\n";
-            default:
-                return
-                    ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
-                    $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
-                    $this->action($number) . ", " .
-                    $this->quantity( $this->next( $number ) ) ." ". $this->container( $number - 1 ) ." of beer on the wall.\n";
-        }
+        return
+            ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
+            $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
+            $this->action($number) . ", " .
+            $this->quantity( $this->next( $number ) ) ." ". $this->container( $this->next( $number ) ) ." of beer on the wall.\n";
     }
 }
