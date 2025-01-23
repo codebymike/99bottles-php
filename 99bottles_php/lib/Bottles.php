@@ -37,19 +37,23 @@ class Bottles
         return $number == 1 ? "it" : "one";
     }
 
+    public function action( int $number ) : string {
+        return $number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun( $number ) ." down and pass it around";
+    }
+
     public function verse( int $number ): string {
         switch ($number) {
             case 0:
                 return
                     ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
                     $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
-                    "Go to the store and buy some more, " .
+                    $this->action($number) . ", " .
                     "99 bottles of beer on the wall.\n";
             default:
                 return
                     ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
                     $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
-                    "Take ". $this->pronoun( $number ) ." down and pass it around, " .
+                    $this->action($number) . ", " .
                     $this->quantity( $number - 1 ) ." ". $this->container( $number - 1 ) ." of beer on the wall.\n";
         }
     }
