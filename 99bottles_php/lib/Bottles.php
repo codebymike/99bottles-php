@@ -30,19 +30,19 @@ class Bottles
     }
 
     public function container( int $number ) : string {
-        return $number == 1 ? "bottle" : "bottles";
+        return (new BottleNumber( $number ))->container( $number );
     }
 
     public function pronoun( int $number ) : string {
-        return $number == 1 ? "it" : "one";
+        return (new BottleNumber( $number ))->pronoun( $number );
     }
 
     public function action( int $number ) : string {
-        return $number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun( $number ) ." down and pass it around";
+        return (new BottleNumber( $number ))->action( $number );
     }
 
     public function next( int $number ) : int {
-        return $number == 0 ? 99 : $number - 1;
+        return (new BottleNumber( $number ))->next( $number );
     }
 
     public function verse( int $number ): string {
