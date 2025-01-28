@@ -62,23 +62,23 @@ class BottleNumber
         $this->number = $number;
     }
 
-    public function quantity( int $number ) : string {
-        return $number == 0 ? "no more" : (string) $number;
+    public function quantity() : string {
+        return $this->number == 0 ? "no more" : (string) $this->number;
     }
 
-    public function container( int $number ) : string {
-        return $number == 1 ? "bottle" : "bottles";
+    public function container() : string {
+        return $this->number == 1 ? "bottle" : "bottles";
     }
 
-    public function pronoun( int $number ) : string {
-        return $number == 1 ? "it" : "one";
+    public function pronoun() : string {
+        return $this->number == 1 ? "it" : "one";
     }
 
-    public function action( int $number ) : string {
-        return $number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun( $number ) ." down and pass it around";
+    public function action() : string {
+        return $this->number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun( $this->number ) ." down and pass it around";
     }
 
-    public function next( int $number ) : int {
-        return $number == 0 ? 99 : $number - 1;
+    public function next() : int {
+        return $this->number == 0 ? 99 : $this->number - 1;
     }
 }
