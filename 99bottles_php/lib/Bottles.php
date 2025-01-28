@@ -75,7 +75,7 @@ class BottleNumber
     }
 
     public function action() : string {
-        return $this->number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun( $this->number ) ." down and pass it around";
+        return $this->number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun() ." down and pass it around";
     }
 
     public function next() : int {
