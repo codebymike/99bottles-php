@@ -25,6 +25,26 @@ class Bottles
             );
     }
 
+    public function quantity( int $number ) : string {
+        return (new BottleNumber( $number ))->quantity( $number );
+    }
+
+    public function container( int $number ) : string {
+        return $number == 1 ? "bottle" : "bottles";
+    }
+
+    public function pronoun( int $number ) : string {
+        return $number == 1 ? "it" : "one";
+    }
+
+    public function action( int $number ) : string {
+        return $number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun( $number ) ." down and pass it around";
+    }
+
+    public function next( int $number ) : int {
+        return $number == 0 ? 99 : $number - 1;
+    }
+
     public function verse( int $number ): string {
         return
             ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
