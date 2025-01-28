@@ -26,23 +26,23 @@ class Bottles
     }
 
     public function quantity( int $number ) : string {
-        return (new BottleNumber( $number ))->quantity( $number );
+        return (new BottleNumber( $number ))->quantity();
     }
 
     public function container( int $number ) : string {
-        return (new BottleNumber( $number ))->container( $number );
+        return (new BottleNumber( $number ))->container();
     }
 
     public function pronoun( int $number ) : string {
-        return (new BottleNumber( $number ))->pronoun( $number );
+        return (new BottleNumber( $number ))->pronoun();
     }
 
     public function action( int $number ) : string {
-        return (new BottleNumber( $number ))->action( $number );
+        return (new BottleNumber( $number ))->action();
     }
 
     public function next( int $number ) : int {
-        return (new BottleNumber( $number ))->next( $number );
+        return (new BottleNumber( $number ))->next();
     }
 
     public function verse( int $number ): string {
