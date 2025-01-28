@@ -25,6 +25,17 @@ class Bottles
             );
     }
 
+    public function verse( int $number ): string {
+        return
+            ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
+            $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
+            $this->action($number) . ", " .
+            $this->quantity( $this->next( $number ) ) ." ". $this->container( $this->next( $number ) ) ." of beer on the wall.\n";
+    }
+}
+
+class BottleNumber
+{
     public function quantity( int $number ) : string {
         return $number == 0 ? "no more" : (string) $number;
     }
@@ -43,13 +54,5 @@ class Bottles
 
     public function next( int $number ) : int {
         return $number == 0 ? 99 : $number - 1;
-    }
-
-    public function verse( int $number ): string {
-        return
-            ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
-            $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
-            $this->action($number) . ", " .
-            $this->quantity( $this->next( $number ) ) ." ". $this->container( $this->next( $number ) ) ." of beer on the wall.\n";
     }
 }
