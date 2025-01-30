@@ -53,7 +53,7 @@ class Bottles
             ucfirst( $bottleNumber->quantity() ) ." ". $bottleNumber->container() ." of beer on the wall, " .
             $bottleNumber->quantity() . " " . $bottleNumber->container() . " of beer.\n" .
             $bottleNumber->action() . ", " .
-            $bottleNumber->quantity( $bottleNumber->next() ) ." ". $bottleNumber->container( $bottleNumber->next() ) ." of beer on the wall.\n";
+            $bottleNumber->next()->quantity() ." ". $bottleNumber->next->()->container() ." of beer on the wall.\n";
     }
 }
 
