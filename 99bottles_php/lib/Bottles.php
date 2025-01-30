@@ -81,7 +81,7 @@ class BottleNumber
         return $this->number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun() ." down and pass it around";
     }
 
-    public function next() : int {
-        return $this->number == 0 ? 99 : $this->number - 1;
+    public function next() : BottleNumber {
+        return $this->number == 0 ? new BottleNumber(99) : new BottleNumber($this->number - 1);
     }
 }
