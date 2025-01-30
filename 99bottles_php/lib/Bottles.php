@@ -46,11 +46,14 @@ class Bottles
     }
 
     public function verse( int $number ): string {
+
+        $bottleNumber = new BottleNumber( $number );
+
         return
-            ucfirst( $this->quantity( $number ) ) ." ". $this->container( $number ) ." of beer on the wall, " .
-            $this->quantity($number) . " " . $this->container($number) . " of beer.\n" .
-            $this->action($number) . ", " .
-            $this->quantity( $this->next( $number ) ) ." ". $this->container( $this->next( $number ) ) ." of beer on the wall.\n";
+            ucfirst( $bottleNumber->quantity() ) ." ". $bottleNumber->container() ." of beer on the wall, " .
+            $bottleNumber->quantity() . " " . $bottleNumber->container() . " of beer.\n" .
+            $bottleNumber->action() . ", " .
+            $bottleNumber->quantity( $bottleNumber->next() ) ." ". $bottleNumber->container( $bottleNumber->next() ) ." of beer on the wall.\n";
     }
 }
 
