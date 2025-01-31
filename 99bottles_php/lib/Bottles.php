@@ -30,10 +30,10 @@ class Bottles
         $bottleNumber = new BottleNumber( $number );
 
         return
-            ucfirst( (string) $bottleNumber ) ." of beer on the wall, " .
-            (string) $bottleNumber . " of beer.\n" .
-            $bottleNumber->action() . ", " .
-            (string) $bottleNumber->next() ." of beer on the wall.\n";
+            ucfirst( "{$bottleNumber} of beer on the wall, ") .
+            "{$bottleNumber} of beer.\n" .
+            "{$bottleNumber->action()}, " .
+            "{$bottleNumber->next()} of beer on the wall.\n";
     }
 }
 
