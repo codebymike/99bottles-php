@@ -46,7 +46,7 @@ class BottleNumber
     }
 
     public function __toString() : string {
-        return $this->quantity . " " . $this->container;
+        return $this->quantity() . " " . $this->container();
     }
 
     public function quantity() : string {
