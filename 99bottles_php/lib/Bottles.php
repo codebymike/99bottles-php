@@ -25,35 +25,15 @@ class Bottles
             );
     }
 
-    public function quantity( int $number ) : string {
-        return (new BottleNumber( $number ))->quantity();
-    }
-
-    public function container( int $number ) : string {
-        return (new BottleNumber( $number ))->container();
-    }
-
-    public function pronoun( int $number ) : string {
-        return (new BottleNumber( $number ))->pronoun();
-    }
-
-    public function action( int $number ) : string {
-        return (new BottleNumber( $number ))->action();
-    }
-
-    public function next( int $number ) : int {
-        return (new BottleNumber( $number ))->next();
-    }
-
     public function verse( int $number ): string {
 
         $bottleNumber = new BottleNumber( $number );
 
         return
-            ucfirst( $bottleNumber->quantity() ) ." ". $bottleNumber->container() ." of beer on the wall, " .
-            $bottleNumber->quantity() . " " . $bottleNumber->container() . " of beer.\n" .
+            ucfirst( (string) $bottleNumber ) ." of beer on the wall, " .
+            (string) $bottleNumber . " of beer.\n" .
             $bottleNumber->action() . ", " .
-            $bottleNumber->next()->quantity() ." ". $bottleNumber->next()->container() ." of beer on the wall.\n";
+            (string) $bottleNumber->next() ." of beer on the wall.\n";
     }
 }
 
@@ -63,6 +43,10 @@ class BottleNumber
 
     public function __construct( int $number ) {
         $this->number = $number;
+    }
+
+    public function __toString() : string {
+        return $this->quantity . " " . $this->container;
     }
 
     public function quantity() : string {
