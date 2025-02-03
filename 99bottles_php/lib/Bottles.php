@@ -36,21 +36,14 @@ class Bottles
 
     public function verse( int $number ): string {
 
-        $bottleNumber = new BottleNumber( $number );
+        $bottleNumber = $this->BottleNumberFor( $number );
+        $bottleNumberNext = $this->BottleNumberFor( $bottleNumber->next() );
 
         return
             ucfirst( "{$bottleNumber} of beer on the wall, ") .
             "{$bottleNumber} of beer.\n" .
             "{$bottleNumber->action()}, " .
-            "{$bottleNumber->next()} of beer on the wall.\n";
-    }
-}
-
-
-class BottleNumber0 extends BottleNumber
-{
-    public function quantity() : string {
-        return "no more";
+            "{$bottleNumberNext} of beer on the wall.\n";
     }
 }
 
@@ -68,7 +61,7 @@ class BottleNumber
     }
 
     public function quantity() : string {
-        return $this->number == 0 ? "no more" : (string) $this->number;
+        return (string) $this->number;
     }
 
     public function container() : string {
@@ -83,7 +76,15 @@ class BottleNumber
         return $this->number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun() ." down and pass it around";
     }
 
-    public function next() : BottleNumber {
-        return $this->number == 0 ? new BottleNumber(99) : new BottleNumber($this->number - 1);
+    public function next() : int {
+        return $this->number == 0 ? 99 : $this->number - 1;
+    }
+}
+
+
+class BottleNumber0 extends BottleNumber
+{
+    public function quantity() : string {
+        return "no more";
     }
 }
