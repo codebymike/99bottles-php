@@ -11,6 +11,8 @@ class Bottles
     public function bottleNumberFor( int $number ) : BottleNumber {
         if( $number == 0 ) {
             $className = BottleNumber0::class;
+        } else if( $number == 1 ) {
+            $className = BottleNumber1::class;
         } else {
             $className = BottleNumber::class;
         }
@@ -65,11 +67,11 @@ class BottleNumber
     }
 
     public function container() : string {
-        return $this->number == 1 ? "bottle" : "bottles";
+        return "bottles";
     }
 
     public function pronoun() : string {
-        return $this->number == 1 ? "it" : "one";
+        return "one";
     }
 
     public function action() : string {
@@ -94,5 +96,16 @@ class BottleNumber0 extends BottleNumber
 
     public function next() : int {
         return 99;
+    }
+}
+
+class BottleNumber1 extends BottleNumber
+{
+    public function container() : string {
+        return "bottle";
+    }
+
+    public function pronoun() : string {
+        return "it";
     }
 }
