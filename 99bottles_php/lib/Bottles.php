@@ -37,6 +37,13 @@ class Bottles
     }
 }
 
+class BottleNumber0 extends BottleNumber
+{
+    public function quantity() : string {
+        return "no more";
+    }
+}
+
 class BottleNumber
 {
     protected $number;
