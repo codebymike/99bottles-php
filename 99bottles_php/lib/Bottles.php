@@ -73,11 +73,11 @@ class BottleNumber
     }
 
     public function action() : string {
-        return $this->number == 0 ? "Go to the store and buy some more" : "Take ". $this->pronoun() ." down and pass it around";
+        return "Take ". $this->pronoun() ." down and pass it around";
     }
 
     public function next() : int {
-        return $this->number == 0 ? 99 : $this->number - 1;
+        return $this->number - 1;
     }
 }
 
@@ -86,5 +86,13 @@ class BottleNumber0 extends BottleNumber
 {
     public function quantity() : string {
         return "no more";
+    }
+
+    public function action() : string {
+        return "Go to the store and buy some more";
+    }
+
+    public function next() : int {
+        return 99;
     }
 }
