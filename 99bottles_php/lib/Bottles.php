@@ -8,6 +8,15 @@ class Bottles
     private $start = 99;
     private $finish = 0;
 
+    public function bottleNumberFor( int $number ) : BottleNumber {
+        if( $number == 0 ) {
+            $className = BottleNumber0::class;
+        } else {
+            $className = BottleNumber::class;
+        }
+        return new $className($number);
+    }
+
     public function song() : string {
         return $this->verses( $this->start, $this->finish );
     }
@@ -37,12 +46,14 @@ class Bottles
     }
 }
 
+
 class BottleNumber0 extends BottleNumber
 {
     public function quantity() : string {
         return "no more";
     }
 }
+
 
 class BottleNumber
 {
