@@ -51,7 +51,7 @@ class BottleNumber
         return $this->quantity() . " " . $this->container();
     }
 
-    public static function for( int $number ) : BottleNumber {
+    public static function for( $number ) : BottleNumber {
 
         if( $number instanceof BottleNumber ) {
             return $number;
@@ -84,7 +84,7 @@ class BottleNumber
     }
 
     public function next() {
-        return $this->number - 1;
+        return BottleNumber::for( $this->number - 1 );
     }
 }
 
@@ -100,7 +100,7 @@ class BottleNumber0 extends BottleNumber
     }
 
     public function next() {
-        return 99;
+        return BottleNumber::for( 99 );
     }
 }
 
