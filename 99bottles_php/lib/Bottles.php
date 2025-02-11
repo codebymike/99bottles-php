@@ -28,13 +28,12 @@ class Bottles
     public function verse( int $number ): string {
 
         $bottleNumber = BottleNumber::for( $number );
-        $bottleNumberNext = $bottleNumber->next();
 
         return
             ucfirst( "{$bottleNumber} of beer on the wall, ") .
             "{$bottleNumber} of beer.\n" .
             "{$bottleNumber->action()}, " .
-            "{$bottleNumberNext} of beer on the wall.\n";
+            "{$bottleNumber->next()} of beer on the wall.\n";
     }
 }
 
