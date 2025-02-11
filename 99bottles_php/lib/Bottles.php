@@ -8,17 +8,6 @@ class Bottles
     private $start = 99;
     private $finish = 0;
 
-    public function bottleNumberFor( int $number ) : BottleNumber {
-        if( $number == 0 ) {
-            $className = BottleNumber0::class;
-        } else if( $number == 1 ) {
-            $className = BottleNumber1::class;
-        } else {
-            $className = BottleNumber::class;
-        }
-        return new $className($number);
-    }
-
     public function song() : string {
         return $this->verses( $this->start, $this->finish );
     }
@@ -38,8 +27,8 @@ class Bottles
 
     public function verse( int $number ): string {
 
-        $bottleNumber = $this->BottleNumberFor( $number );
-        $bottleNumberNext = $this->BottleNumberFor( $bottleNumber->next() );
+        $bottleNumber = BottleNumber::for( $number );
+        $bottleNumberNext = BottleNumber::for( $bottleNumber->next() );
 
         return
             ucfirst( "{$bottleNumber} of beer on the wall, ") .
@@ -60,6 +49,17 @@ class BottleNumber
 
     public function __toString() : string {
         return $this->quantity() . " " . $this->container();
+    }
+
+    public static function for( int $number ) : BottleNumber {
+        if( $number == 0 ) {
+            $className = BottleNumber0::class;
+        } else if( $number == 1 ) {
+            $className = BottleNumber1::class;
+        } else {
+            $className = BottleNumber::class;
+        }
+        return new $className($number);
     }
 
     public function quantity() : string {
