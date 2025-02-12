@@ -55,6 +55,8 @@ class BottleNumber
             $className = BottleNumber0::class;
         } else if( $number == 1 ) {
             $className = BottleNumber1::class;
+        } else if( $number == 6 ) {
+            $className = BottleNumber6::class;
         } else {
             $className = BottleNumber::class;
         }
@@ -106,5 +108,12 @@ class BottleNumber1 extends BottleNumber
 
     public function pronoun() : string {
         return "it";
+    }
+}
+
+class BottleNumber6 extends BottleNumber
+{
+    public function container() : string {
+        return "six-pack";
     }
 }
