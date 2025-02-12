@@ -30,3 +30,5 @@ Open-closed:
     2. Find the smallest difference between them.
     3. Make the simplest change that will remove that difference.
 Make one change at a time - rerun the tests, if red - then revert the change and try something better
+"make the change easy (warning: this may be hard), then make the easy change"
+The power of polymorphism is that these role-playing objects are interchangeable from the message sender’s point of view.
