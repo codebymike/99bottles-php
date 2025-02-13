@@ -7,6 +7,11 @@ class Bottles
 {
     private $start = 99;
     private $finish = 0;
+    private $verseTemplate;
+
+    public function __construct( string $verseTemplate = BottleVerse::class ) {
+        $this->verseTemplate = $verseTemplate;
+    }
 
     public function song() : string {
         return $this->verses( $this->start, $this->finish );
