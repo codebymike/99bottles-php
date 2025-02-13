@@ -32,3 +32,4 @@ Open-closed:
 Make one change at a time - rerun the tests, if red - then revert the change and try something better
 "make the change easy (warning: this may be hard), then make the easy change"
 The power of polymorphism is that these role-playing objects are interchangeable from the message sender’s point of view.
+- - - Isolate the behavior you want to vary. - - -
