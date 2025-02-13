@@ -39,6 +39,25 @@ class Bottles
     }
 }
 
+class BottleVerse
+{
+    private $number;
+
+    public function __construct( int $number ) {
+        $this->number = $number;
+    }
+
+    public function lyrics() : string {
+        $bottleNumber = BottleNumber::for($this->number);
+
+        return
+            ucfirst( "{$bottleNumber} of beer on the wall, ") .
+            "{$bottleNumber} of beer.\n" .
+            "{$bottleNumber->action()}, " .
+            "{$$bottleNumber->next()} of beer on the wall.\n";
+    }
+}
+
 
 class BottleNumber
 {
