@@ -31,8 +31,7 @@ class Bottles
     }
 
     public function verse( int $number ): string {
-        return (new $this->verseTemplate($number))->_lyrics();
-        return (new $this->verseTemplate($number))->_lyrics();
+        return $this->verseTemplate::lyrics($number);
     }
 }
 
