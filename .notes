@@ -33,3 +33,11 @@ Make one change at a time - rerun the tests, if red - then revert the change and
 "make the change easy (warning: this may be hard), then make the easy change"
 The power of polymorphism is that these role-playing objects are interchangeable from the message sender’s point of view.
 - - - Isolate the behavior you want to vary. - - -
+Blank lines in code can represent a 'change of topic' - possibly violates SRP
+---
+Well-designed object-oriented applications consist of loosely-coupled objects that rely on polymorphism to vary behavior. 
+    Injecting dependencies loosens coupling. 
+    Polymorphism isolates variant behavior into sets of interchangeable objects that look the same from the outside but behave differently on the inside.
+---
+resist giving instance methods knowledge of concrete class names, and
+seek opportunities to move the object creation towards the edges of the application.
