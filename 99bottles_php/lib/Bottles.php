@@ -39,16 +39,18 @@ class BottleVerse
 {
     private $number;
 
-    public function __construct( int $number ) {
+    public function __construct( $number ) {
         $this->number = $number;
     }
 
     public static function lyrics(int $number): string {
-        return (new BottleVerse($number))->_lyrics();
+        return (new BottleVerse(BottleNumber::for($number)))->_lyrics();
     }
 
     public function _lyrics() : string {
-        $bottleNumber = BottleNumber::for($this->number);
+        $bottleNumber = $this->number instanceof BottleNumber ?
+            $this->number :
+            BottleNumber::for($this->number);
 
         return
             ucfirst( "{$bottleNumber} of beer on the wall, ") .
