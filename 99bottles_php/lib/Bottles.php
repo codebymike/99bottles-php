@@ -37,10 +37,10 @@ class Bottles
 
 class BottleVerse
 {
-    private $number;
+    protected $bottleNumber;
 
-    public function __construct( $number ) {
-        $this->number = $number;
+    public function __construct( Object $bottleNumber ) {
+        $this->bottleNumber = $bottleNumber;
     }
 
     public static function lyrics(int $number): string {
@@ -48,13 +48,11 @@ class BottleVerse
     }
 
     public function _lyrics() : string {
-        $bottleNumber = $this->number;
-
         return
-            ucfirst( "{$bottleNumber} of beer on the wall, ") .
-            "{$bottleNumber} of beer.\n" .
-            "{$bottleNumber->action()}, " .
-            "{$bottleNumber->next()} of beer on the wall.\n";
+            ucfirst( "{$this->bottleNumber} of beer on the wall, ") .
+            "{$this->bottleNumber} of beer.\n" .
+            "{$this->bottleNumber->action()}, " .
+            "{$this->bottleNumber->next()} of beer on the wall.\n";
     }
 }
 
