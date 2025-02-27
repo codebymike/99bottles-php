@@ -4,7 +4,7 @@
 
 class BottleVerseTest extends \PHPUnit\Framework\TestCase {
 
-    public function test_the_first_verse() {
+    public function test_verse_general_rule_upper_bound() {
         $expected =
           "99 bottles of beer on the wall, " .
           "99 bottles of beer.\n" .
@@ -14,7 +14,7 @@ class BottleVerseTest extends \PHPUnit\Framework\TestCase {
         $this->assertEquals($expected, BottleVerse::lyrics(99));
       }
 
-      public function test_another_verse() {
+      public function test_verse_general_rule_lower_bound() {
         $expected =
           "3 bottles of beer on the wall, " .
           "3 bottles of beer.\n" .
