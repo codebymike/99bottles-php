@@ -7,7 +7,7 @@ class CountdownSong
 {
     protected $verseTemplate, $min, $max;
 
-    public function __construct( string $verseTemplate = BottleVerse::class, int $max = 99, int $min = 0 ) {
+    public function __construct( string $verseTemplate, int $max = 9999, int $min = 0 ) {
         $this->verseTemplate = $verseTemplate;
         $this->max = $max;
         $this->min = $min;
