@@ -5,16 +5,16 @@ declare(strict_types = 1);
 
 class CountdownSong
 {
-    private $start = 99;
-    private $finish = 0;
-    private $verseTemplate;
+    protected $verseTemplate, $min, $max;
 
-    public function __construct( string $verseTemplate = BottleVerse::class ) {
+    public function __construct( string $verseTemplate = BottleVerse::class, int $max = 99, int $min = 0 ) {
         $this->verseTemplate = $verseTemplate;
+        $this->max = $max;
+        $this->min = $min;
     }
 
     public function song() : string {
-        return $this->verses( $this->start, $this->finish );
+        return $this->verses( $this->max, $this->min );
     }
 
     public function verses( int $start, int $finish ) : string {
