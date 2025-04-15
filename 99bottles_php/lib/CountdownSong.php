@@ -35,6 +35,12 @@ class CountdownSong
     }
 }
 
+
+interface CountdownSongVerse {
+    public static function lyrics(int $number): string;
+}
+
+
 class BottleVerse
 {
     protected $bottleNumber;
