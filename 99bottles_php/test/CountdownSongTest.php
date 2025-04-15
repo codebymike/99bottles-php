@@ -12,13 +12,13 @@ class VerseFake {
 
 class CountdownSongTest extends \PHPUnit\Framework\TestCase {
 
-  public function test_a_verse() {
+  public function test_verse() {
     $expected = "This is verse 500.\n";
     $this->assertEquals($expected, (new CountdownSong(VerseFake::class))->verse(500));
   }
 
 
-  public function test_a_few_verses() {
+  public function test_verses() {
     $expected =
       "This is verse 99.\n" .
       "\n" .
@@ -29,7 +29,7 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
     $this->assertEquals($expected, (new CountdownSong( VerseFake::class ))->verses(99, 97));
   }
 
-  
+
   public function test_the_whole_song() {
     $expected = <<< SONG
 99 bottles of beer on the wall, 99 bottles of beer.
