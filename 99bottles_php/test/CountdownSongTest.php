@@ -5,7 +5,7 @@ require __DIR__ . "/../lib/CountdownSong.php";
 
 class VerseFake {
   public static function lyrics(int $number): string {
-    return "this is verse number {$number}.\n";
+    return "This is verse {$number}.\n";
   }
 }
 
@@ -14,17 +14,13 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
 
   public function test_a_couple_verses() {
     $expected =
-      "99 bottles of beer on the wall, " .
-      "99 bottles of beer.\n" .
-      "Take one down and pass it around, " .
-      "98 bottles of beer on the wall.\n" .
+      "This is verse 99.\n" .
       "\n" .
-      "98 bottles of beer on the wall, " .
-      "98 bottles of beer.\n" .
-      "Take one down and pass it around, " .
-      "97 bottles of beer on the wall.\n";
+      "This is verse 98.\n" .
+      "\n" .
+      "This is verse 97.\n";
 
-    $this->assertEquals($expected, (new CountdownSong())->verses(99, 98));
+    $this->assertEquals($expected, (new CountdownSong( VerseFake::class ))->verses(99, 97));
   }
 
   public function test_a_few_verses() {
