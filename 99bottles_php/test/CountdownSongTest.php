@@ -30,10 +30,10 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
   }
 
 
-  public function test_the_whole_song() {
+  public function test_song() {
     // generate expected
-    $start = 99;
-    $finish = 0;
+    $start = 47;
+    $finish = 43;
     $expected = "";
     for ($i = $start; $i >= $finish; $i--) {
       $expected .= "This is verse {$i}.\n";
@@ -42,6 +42,6 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
       }
     }
 
-    $this->assertEquals($expected, (new CountdownSong( VerseFake::class ))->song());
+    $this->assertEquals($expected, (new CountdownSong( VerseFake::class, 47, 43 ))->song());
   }
 }
