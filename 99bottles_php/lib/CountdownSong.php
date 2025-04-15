@@ -41,7 +41,7 @@ interface CountdownSongVerse {
 }
 
 
-class BottleVerse
+class BottleVerse implements CountdownSongVerse
 {
     protected $bottleNumber;
 
