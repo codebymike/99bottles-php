@@ -1,6 +1,15 @@
 # '99 Bottles' Song - OO PHP Implementation
 
-Practice using good OO design principles and TDD to implement and then refactor code which generates a seemingly simple song.
+Practice using good OO design principles and TDD to implement and then refactor code which generates a (seemingly) simple song.
+
+## Notes
+
+- Good OO is built upon small, interchangeable objects that interact via abstractions
+- Every code improvement (DRY, composition, DI) has a complexity cost
+- If you are capable of writing a smart, complex solution, it is imcumbent to accept the harder task of writing simpler code
+- Seek opportunities to move object creation towards the edges of the application
+- As tests get more specific, code should become more generic
+- "make the change easy (warning: this may be hard), then make the easy change"
 
 ## Run Tests
 
@@ -8,7 +17,7 @@ Practice using good OO design principles and TDD to implement and then refactor 
 $ ./vendor/bin/phpunit test
 ```
 
-## Inital 'Shameless Green' implementation for comparison
+## Initial 'Shameless Green' implementation for comparison
 
 ```
 class Bottles {
