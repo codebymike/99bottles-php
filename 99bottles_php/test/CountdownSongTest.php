@@ -31,7 +31,6 @@ class CountdownSongTest extends \PHPUnit\Framework\TestCase {
 
 
   public function test_the_whole_song() {
-
     // generate expected
     $start = 99;
     $finish = 0;
