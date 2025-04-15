@@ -3,7 +3,7 @@
 
 declare(strict_types = 1);
 
-class Bottles
+class CountdownSong
 {
     private $start = 99;
     private $finish = 0;

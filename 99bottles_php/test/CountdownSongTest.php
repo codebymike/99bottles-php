@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . "/../lib/Bottles.php";
+require __DIR__ . "/../lib/CountdownSong.php";
 
-class BottlesTest extends \PHPUnit\Framework\TestCase {
+class CountdownSongTest extends \PHPUnit\Framework\TestCase {
 
   public function test_a_couple_verses() {
     $expected =
@@ -16,7 +16,7 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
       "Take one down and pass it around, " .
       "97 bottles of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verses(99, 98));
+    $this->assertEquals($expected, (new CountdownSong())->verses(99, 98));
   }
 
   public function test_a_few_verses() {
@@ -36,7 +36,7 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
       "Go to the store and buy some more, " .
       "99 bottles of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verses(2, 0));
+    $this->assertEquals($expected, (new CountdownSong())->verses(2, 0));
   }
 
   public function test_the_whole_song() {
@@ -342,6 +342,6 @@ No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
 
 SONG;
-    $this->assertEquals($expected, (new Bottles())->song());
+    $this->assertEquals($expected, (new CountdownSong())->song());
   }
 }
